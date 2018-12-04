@@ -1,0 +1,25 @@
+.container{
+    border: solid purple;
+    padding: 2%;
+    background-color: antiquewhite;
+    border-radius: 5%;
+    margin-top: 10%;
+}
+section .btn{
+    background: palevioletred;
+    float: left;
+}
+ section h4{
+    padding-left: 5%;
+    float: left;
+
+} 
+ section P{
+padding-left: 20%;   
+}
+section h2{
+    margin-bottom: 5%;
+}
+nav{
+    background-color: #c9c1ac;
+}

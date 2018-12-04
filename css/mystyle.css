@@ -1,0 +1,86 @@
+body{
+    width: 100%;
+    margin-right: 0%;
+    display: block;
+}
+header nav{
+    background-color:brown;
+}
+header .container {
+    margin-bottom:10%;
+    margin-top: 10%;
+    display: block;
+}
+header .container img{
+    margin-left:auto;
+    margin-right: auto;
+    display: block;
+}
+header .container-fluid p{
+    margin-left:auto;
+    margin-right: auto;
+    display: block;
+}
+section .container-fluid {
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom:5%;
+    display: block;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5%;
+    background-color: brown;
+}
+section .row img{
+    width: 60%;
+    height: 20%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: block;
+}
+section .row p{
+text-align: justify;
+color: blueviolet;
+}
+section .content{
+    background:rgb(240, 245, 247); 
+    padding-right: 10%;
+    padding-bottom: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-left:0%;
+    margin-right: 0%;
+
+
+}
+section .content h3{
+    color:brown;
+    padding-top:5%;
+   
+}
+section .card p{
+    padding: 5px;
+    margin-top: 5%;
+    font-size: 14px;
+    line-height: 1em;
+    text-align: center;
+}
+section .card{
+      height: 80%;
+      border: solid whitesmoke;
+      border-radius: 5%;
+      margin-top:10%;
+      margin-bottom:10%;
+      margin-right: 0%;
+      margin-left: 0%;
+
+
+}
+section .card-title{
+    padding: 5px;
+}
+footer{
+background-color: black;
+}
