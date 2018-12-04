@@ -61,17 +61,18 @@ if(isset($_POST['submit'])){
                 '$state1',
                 '$menu',
                 '$quantity',
-                '$order_status'
+                '$order_status',
                  NOW())";
                 $result = mysqli_query($conn , $sql);
         if($result){
         $message .= '<div class="alert alert-success" role="alert">
-        Record Saved Successfully</div>';
+        Your Order has been Saved Successfully <button class="btn"><a href = "index.html" class = "nav-link">Home</a> </div>';
        // header('location: success.html');
         }
         else{
         $message .= '<div class="alert alert-danger" role="alert">
-        Record not Saved</div>';
+        Record not Saved <button class="btn"><a href = "index.home">Home</a></button>
+        </div>';
         
         }
         }

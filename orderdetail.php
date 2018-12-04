@@ -12,7 +12,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main1.css" />
     <script src="jquery/jquery.min.js"></script>
     <script src="popper/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script> 
+    <script src="js/bootstrap.js"></script>
+    <style>
+        table td{
+        padding-right:20%;
+        text-align:justify;
+        }
+    </style>
 </head>
 <body>
         <div class="container">
@@ -75,95 +81,119 @@
             $_SESSION['address1']  = $address1;
             $_SESSION['address2']  = $address2;
             $_SESSION['city']      = $city;
-            $_SESSION['state']     = $state;
+            $_SESSION['state1']    = $state1;
             $_SESSION['order_id']  = $order_1d;
             $_SESSION['order_date']= $order_date;
             $_SESSION['menu']      = $menu;
             $_SESSION['quantity']  = $quantity;
     ?>
-            <p>Order_id:    
+        <table>
+           <tr><td>Order_id: </td>
+           <td>   
             <?php echo $_SESSION['order_id']?>
-            </p>
-            <p>Firstname:   
+            </td></tr>
+           <tr><td>Firstname: </td>
+           <td>  
             <?php echo $_SESSION['firstname']?>
-            </p>
-            <p>Lastname:    
+            </td></tr>
+           <tr><td>Lastname: </td>
+           <td>   
             <?php echo $_SESSION['lastname']?>
-            </p>
-            <p>Email:       
+            </td></tr>
+           <tr><td>Email: </td>
+           <td>      
             <?php echo $_SESSION['email']?>
-            </p>
-            <p>Gender:        
+            </td></tr>
+           <tr><td>Gender: </td>
+           <td>       
             <?php echo $_SESSION['gender']?>
-            </p>
-            <p>Phone no:     
+            </td></tr>
+           <tr><td>Phone no: </td>
+           <td>    
             <?php echo $_SESSION['phoneno']?>
-            </p>
-            <p>Address:    
+            </td></tr>
+           <tr><td>Address: </td>
+           <td>   
             <?php echo $_SESSION['address1']?>
-            </p>
-            <p>Nearest Bus-stop:       
+            </td></tr>
+           <tr><td>Nearest Busstop: </td>
+           <td>      
             <?php echo $_SESSION['address2']?>
-            </p>
-            <p>City:        
+            </td></tr>
+           <tr><td>City: </td>
+           <td>       
             <?php echo $_SESSION['city']?>
-            </p>
-            <p>State:       
+            </td></tr>
+           <tr><td>State: </td>
+           <td>      
             <?php echo $_SESSION['state1']?>
-            </p>
-            <p>Menu:        
+            </td></tr>
+           <tr><td>Menu: </td>
+           <td>       
             <?php echo $_SESSION['menu']?>
-            </p>
-            <p>Quantity     
+            </td></tr>
+           <tr><td>Quantity: </td>
+           <td>    
             <?php echo $_SESSION['quantity']?>
+            </td></tr>
+           <p>Order Status:
+                <?php
+                if($order_status == 0){
+                echo "Pending";
+                }
+                else{
+                echo "Resolved";
+                }
+                $_SESSION['order_status']
+                ?>
             </p>
-            <p>Order Date:       
+           <tr><td>Order Date: </td>
+           <td>      
             <?php echo $_SESSION['order_date']?>
-            </p>
+            </td></tr>
             <br>
-            <button class="btn"><a href="orderdetail">View Details</button>
-</div>
-                    <footer class="container-fluid" id="footer">
-                            <div class="row">
-                            <div class="col-sm-6">
-                            <h4 class="text-white">Contact</h4>
-                            <p class="text-white">
-                            Email Address<br>
-                            adebolakehindemary"gmail.com
-                            </p>
-                            </div>
-                            <div class="col-sm-6">
-                            <h4 class="text-white">Connect with me</h4>
-                            <a href="https://www.github.com/kehindemary" class="btn btn-outline-primary btn-icon-only rounded-circle">
-                            <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.twitter.com/kehindemary" class="btn btn-outline-primary btn-icon-only rounded-circle">
-                            <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://web.facebook.com/adebola.kehindemary" class="btn btn-outline-primary btn-icon-only rounded-circle">
-                            <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/adebolakehindemary/" class="btn btn-outline-primary btn-icon-only rounded-circle">
-                            <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/lamina-kehinde-mary-b43982169" class="btn btn-outline-primary btn-icon-only rounded-circle">
-                            <i class="fab fa-linkedin"></i>
-                            </a>
-                            </div>
-                            </div>
-                            <div class="row">
-                            <div class="col-sm-6">
-                            <P class="text-white">
-                            Phone Number<br>
-                            08174036097
-                            </p>
-                            </div>
-                            <div class="col-sm-6">
-                            <p class="text-white">Copyright © 2018 Dufuna-fem, All rights reserved.</p>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-                            </footer> 
-                            </body>
-                            </html>
+        </table>
+            <button class="btn"><a href="vieworder.php" class="nav-link">Back</button>
+        </div>
+        <footer class="container-fluid" id="footer">
+        <div class="row">
+        <div class="col-sm-6">
+        <h4 class="text-white">Contact</h4>
+        <p class="text-white">
+        Email Address<br>
+        adebolakehindemary"gmail.com
+        </td></tr>
+        </div>
+        <div class="col-sm-6">
+        <h4 class="text-white">Connect with me</h4>
+        <a href="https://www.github.com/kehindemary" class="btn btn-outline-primary btn-icon-only rounded-circle">
+        <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.twitter.com/kehindemary" class="btn btn-outline-primary btn-icon-only rounded-circle">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://web.facebook.com/adebola.kehindemary" class="btn btn-outline-primary btn-icon-only rounded-circle">
+        <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/adebolakehindemary/" class="btn btn-outline-primary btn-icon-only rounded-circle">
+        <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/lamina-kehinde-mary-b43982169" class="btn btn-outline-primary btn-icon-only rounded-circle">
+        <i class="fab fa-linkedin"></i>
+        </a>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-6">
+        <P class="text-white">
+        Phone Number<br>
+        08174036097
+        </td></tr>
+        </div>
+        <div class="col-sm-6">
+        <p class="text-white">Copyright © 2018 Dufuna-fem, All rights reserved.</td></tr>
+        </div>
+        </div>
+        </footer> 
+</body>
+</html>
