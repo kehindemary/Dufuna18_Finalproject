@@ -47,7 +47,6 @@ if(isset($_POST['submit'])){
                 }
                
         else{
-        $conn= mysqli_connect('localhost', 'root','mysql', 'menu_order');
         $sql = "INSERT INTO orders(firstname , lastname, email,  
          gender, phoneno, address1, address2, city, state1, menu, quantity, order_status, order_date)
         VALUES('$firstname', 
@@ -71,7 +70,7 @@ if(isset($_POST['submit'])){
         }
         else{
         $message .= '<div class="alert alert-danger" role="alert">
-        Record not Saved <button class="btn"><a href = "index.home">Home</a></button>
+        Record not Saved <button class="btn"><a href = "index.html">Home</a></button>
         </div>';
         
         }

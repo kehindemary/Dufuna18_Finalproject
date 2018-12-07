@@ -15,10 +15,11 @@
     	quantity int(10) not null,
     	order_status boolean not null,
     	order_date  datetime not null);
-    use menu_order;
-CREATE TABLE admin_login (
-    admin_id int PRIMARY KEY AUTO_INCREMENT not null,
+    	use menu_order;
+	CREATE TABLE admin_login (
+    	admin_id int PRIMARY KEY AUTO_INCREMENT not null,
 	username varchar(20) NOT null,
 	password1 varchar(20) not null);
-	INSERT INTO admin_login ('username','password1')VALUES('admin','dufuna18');
+ 	use menu_order;
+	INSERT INTO admin_login (username,password1)VALUES('admin','dufuna18');
 

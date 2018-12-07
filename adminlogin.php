@@ -1,25 +1,17 @@
 
 <?php
 $message = '';
-//connection
-$server = "localhost";
-$username = "admin";
-$password = "dufuna18";
-$database = "menu_order";
-//connect to database
-$conn = mysqli_connect($server, $username, $password, $database);
-if(!$conn){
-    die("connection not sucessful". mysqli_connect_error($conn));
-}
-//end of connection
+include('connection.php');
 if(isset($_POST['submit'])){
     $username = mysqli_escape_string($conn, $_POST['username']);
     $password1 = mysqli_escape_string($conn, $_POST['password1']);
+    $password1 == md5 ($password1);
     if(empty($username) || empty($password1)){
     die ("All fields are Required");
     }
     else{
     $sql = "SELECT * FROM admin_login WHERE username ='$username' AND password1 ='$password1'";
+   
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
         }
