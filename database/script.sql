@@ -19,7 +19,7 @@
 	CREATE TABLE admin_login (
     	admin_id int PRIMARY KEY AUTO_INCREMENT not null,
 	username varchar(20) NOT null,
-	password1 varchar(20) not null);
+	password1 varchar(50) not null);
  	use menu_order;
-	INSERT INTO admin_login (username,password1)VALUES('admin','dufuna18');
+	INSERT INTO admin_login (username,password1)VALUES('admin', MD5('dufuna18'));
 

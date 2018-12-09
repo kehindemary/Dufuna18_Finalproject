@@ -5,13 +5,12 @@ include('connection.php');
 if(isset($_POST['submit'])){
     $username = mysqli_escape_string($conn, $_POST['username']);
     $password1 = mysqli_escape_string($conn, $_POST['password1']);
-    $password1 == md5 ($password1);
+    $password1 = md5($password1);
     if(empty($username) || empty($password1)){
     die ("All fields are Required");
     }
     else{
     $sql = "SELECT * FROM admin_login WHERE username ='$username' AND password1 ='$password1'";
-   
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
         }
@@ -22,7 +21,6 @@ if(isset($_POST['submit'])){
     $message .= '<div class="alert alert-danger" role="alert">
     User credentials is Wrong</div>';
     }
-    
 }
 
 ?>

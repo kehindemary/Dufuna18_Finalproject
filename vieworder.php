@@ -41,13 +41,7 @@
                     </nav>
       <?php
         session_start();
-        $server = "localhost";
-        $username = "admin";
-        $password = "dufuna18";
-        $database = "menu_order";
-        //connect to database
-        $conn = mysqli_connect($server, $username, $password, $database);
-        //end of connection
+       include ('connection.php');
         $sql = "SELECT * FROM orders";
         $run = mysqli_query($conn, $sql);
         $result = mysqli_fetch_assoc($run);
