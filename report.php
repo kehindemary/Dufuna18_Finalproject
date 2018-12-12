@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Customer Detail</title>
+    <title>Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
@@ -71,7 +71,7 @@
     <?php } ?>
   </tbody>
 </table>
-<button class="btn"><a href ="customerdetail1.php" class = "nav-link">Back</a></button>
+<button class="btn"><a href ="index.html" class = "nav-link">Back to Home</a></button>
 </div>
 </body>
 </html>

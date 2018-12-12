@@ -29,16 +29,13 @@
                     <a class="nav-link" href="adminlogin.php">Admin</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="vieworder.php">View Order<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
                     <a class="nav-link" href="customerdetail1.php">View all Orders</a>
                     </li>
                     </ul>
                     </div>
                     </nav>
             <div class="container">
-            <table class="table table-bordered">
+            <table class="table">
     <thead>
     <tr>
       <th scope="col">Orderid</th>
@@ -47,6 +44,7 @@
       <th scope="col">Email</th>
       <th scope="col">Menu</th>
       <th scope="col">Quantity</th>
+      <th scope="col">Details</th>
     </tr>
     </thead>
     <tbody>
@@ -54,20 +52,23 @@
       include ('connection.php');
       $sql = "SELECT * FROM orders";
       $run = mysqli_query($conn, $sql);
-      while($_SESSION = mysqli_fetch_assoc($run)){
+      while($row = mysqli_fetch_assoc($run)){
             ?>
     <tr>
-      <th scope="row"><?php echo $_SESSION['order_id']?></th>
-      <td><?php echo $_SESSION['firstname']?></td>
-      <td><?php echo $_SESSION['lastname']?></td>
-      <td><?php echo $_SESSION['email']?></td>
-      <td><?php echo $_SESSION['menu']?></td>
-      <td><?php echo $_SESSION['quantity']?></td>
+      <th scope="row"><?php echo $row['order_id']?></th>
+      <td><?php echo $row['firstname']?></td>
+      <td><?php echo $row['lastname']?></td>
+      <td><?php echo $row['email']?></td>
+      <td><?php echo $row['menu']?></td>
+      <td><?php echo $row['quantity']?></td>
+<td><button class="btn"><a href = "<?php echo'orderdetail.php?id=' . $row['order_id']?>" class = "nav-link">View Details</a></button>
+</td>
     </tr>
       <?php } ?>
       </tbody>
   </table>
-  <button class="btn"><a href ="customerdetail.php" class = "nav-link">View Details</a></button>
-      </div>
+  <br>
+<button class="btn"><a href="report.php" class="nav-link">Generate Order Report</button>
+</div>
 </body>
 </html>

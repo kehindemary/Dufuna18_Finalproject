@@ -14,6 +14,7 @@ if(isset($_POST['submit'])){
         $state1 = mysqli_escape_string($conn, $_POST['state1']);
         $menu = mysqli_escape_string($conn, $_POST['menu']);
         $quantity = mysqli_escape_string($conn, $_POST['quantity']);
+        $order_status = $_POST['order_status'];
         if(empty($firstname) || empty($lastname) || empty($email) || empty($gender) || empty($phoneno) ||
         empty($address1) || empty($address2) || empty($city) || empty($state1) || empty($menu) || empty($quantity)){
             die ("All fields are Required");
@@ -42,10 +43,12 @@ if(isset($_POST['submit'])){
                 elseif ( strlen ( $city ) < 3 || strlen ( $city ) > 50) {
                 $message .= '<div class="alert alert-danger" role="alert">City must be between 3 and 50 characters</div>';
                 }
+                elseif ( strlen ( $menu ) < 3 || strlen ( $menu ) > 50) {
+                $message .= '<div class="alert alert-danger" role="alert">Menu must be between 3 and 50 characters</div>';
+                }
                 elseif ( strlen ( $quantity ) < 1 || strlen ( $quantity ) > 4) {
                 $message .= '<div class="alert alert-danger" role="alert">Address must be between 1 and 4 characters</div>';
                 }
-               
         else{
         $sql = "INSERT INTO orders(firstname , lastname, email,  
          gender, phoneno, address1, address2, city, state1, menu, quantity, order_status, order_date)
@@ -65,19 +68,17 @@ if(isset($_POST['submit'])){
                 $result = mysqli_query($conn , $sql);
         if($result){
         $message .= '<div class="alert alert-success" role="alert">
-        Your Order has been Saved Successfully <button class="btn"><a href = "index.html" class = "nav-link">Home</a> </div>';
-       // header('location: success.html');
+        Record Saved Successfully <button class="btn"><a href = "index.html">Home</a></button></div>';
         }
         else{
-        $message .= '<div class="alert alert-danger" role="alert">
-        Record not Saved <button class="btn"><a href = "index.html">Home</a></button>
-        </div>';
+            $message .= '<div class="alert alert-danger" role="alert">
+            Record not Saved ' . mysqli_error($conn) . '<button class="btn"><a href = "index.html">Home</a></button>
+            </div>';
         
         }
         }
     }
-
-?>
+ ?>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
@@ -99,4 +100,3 @@ echo $message;
 ?>  
 </body>
 </html>
-

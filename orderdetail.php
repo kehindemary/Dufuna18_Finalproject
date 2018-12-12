@@ -37,98 +37,65 @@
                     <a class="nav-link" href="adminlogin.php">Admin</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="vieworder.php">View Order<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
                     <a class="nav-link" href="customerdetail1.php">View all Orders</a>
                     </li>
                     </ul>
                     </div>
                     </nav>
       <?php
-        session_start();
         include ('connection.php');
-        $sql = "SELECT * FROM orders";
-        $run = mysqli_query($conn, $sql);
-        $result = mysqli_fetch_assoc($run);
-        
-        $order_1d     =     $result['order_id'];
-        $firstname    =     $result['firstname'];
-        $lastname     =     $result['lastname'];
-        $email        =     $result['email'];
-        $gender       =     $result['gender'];
-        $phoneno      =     $result['phoneno'];
-        $address1     =     $result['address1'];
-        $address2     =     $result['address2'];
-        $city         =     $result['city'];
-        $state1       =     $result['state1'];
-        $menu         =     $result['menu'];
-        $quantity     =     $result['quantity'];
-        $order_status =     $result['order_status'];
-        $order_date   =     $result['order_date'];
-        
-            $_SESSION['firstname'] = $firstname;
-            $_SESSION['lastname']  = $lastname;
-            $_SESSION['email']     = $email;
-            $_SESSION['gender']    = $gender;
-            $_SESSION['phoneno']   = $phoneno;
-            $_SESSION['address1']  = $address1;
-            $_SESSION['address2']  = $address2;
-            $_SESSION['city']      = $city;
-            $_SESSION['state1']    = $state1;
-            $_SESSION['order_id']  = $order_1d;
-            $_SESSION['order_date']= $order_date;
-            $_SESSION['menu']      = $menu;
-            $_SESSION['quantity']  = $quantity;
+        $_GET['order_id'];
+        $sql = "SELECT * FROM orders WHERE order_id ='".$_GET['id']."'";
+        $row = mysqli_query($conn, $sql)->fetch_assoc();
     ?>
         <table>
-           <tr><td>Order_id: </td>
+           <tr><td>order_id: </td>
            <td>   
-            <?php echo $_SESSION['order_id']?>
+            <?php echo $row['order_id']?>
             </td></tr>
            <tr><td>Firstname: </td>
            <td>  
-            <?php echo $_SESSION['firstname']?>
+            <?php echo $row['firstname']?>
             </td></tr>
            <tr><td>Lastname: </td>
            <td>   
-            <?php echo $_SESSION['lastname']?>
+            <?php echo $row['lastname']?>
             </td></tr>
            <tr><td>Email: </td>
            <td>      
-            <?php echo $_SESSION['email']?>
+            <?php echo $row['email']?>
             </td></tr>
            <tr><td>Gender: </td>
            <td>       
-            <?php echo $_SESSION['gender']?>
+            <?php echo $row['gender']?>
             </td></tr>
            <tr><td>Phone no: </td>
            <td>    
-            <?php echo $_SESSION['phoneno']?>
+            <?php echo $row['phoneno']?>
             </td></tr>
            <tr><td>Address: </td>
            <td>   
-            <?php echo $_SESSION['address1']?>
+            <?php echo $row['address1']?>
             </td></tr>
            <tr><td>Nearest Busstop: </td>
            <td>      
-            <?php echo $_SESSION['address2']?>
+            <?php echo $row['address2']?>
             </td></tr>
            <tr><td>City: </td>
            <td>       
-            <?php echo $_SESSION['city']?>
+            <?php echo $row['city']?>
             </td></tr>
            <tr><td>State: </td>
            <td>      
-            <?php echo $_SESSION['state1']?>
+            <?php echo $row['state1']?>
             </td></tr>
            <tr><td>Menu: </td>
            <td>       
-            <?php echo $_SESSION['menu']?>
+            <?php echo $row['menu']?>
             </td></tr>
            <tr><td>Quantity: </td>
            <td>    
-            <?php echo $_SESSION['quantity']?>
+            <?php echo $row['quantity']?>
             </td></tr>
            <p>Order Status:
                 <?php
@@ -138,16 +105,16 @@
                 else{
                 echo "Resolved";
                 }
-                $_SESSION['order_status']
+                $row['order_status']
                 ?>
             </p>
            <tr><td>Order Date: </td>
            <td>      
-            <?php echo $_SESSION['order_date']?>
+            <?php echo $row['order_date']?>
             </td></tr>
             <br>
         </table>
-            <button class="btn"><a href="vieworder.php" class="nav-link">Back</button>
+            <button class="btn"><a href="customerdetail1.php" class="nav-link">Back</button>
         </div>
         <footer class="container-fluid" id="footer">
         <div class="row">
