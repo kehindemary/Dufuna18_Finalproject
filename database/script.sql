@@ -6,7 +6,7 @@
 	lastname varchar(50) not null,
 	email varchar(50) not null,
     	gender ENUM('male','female') not null,
-	phoneno int(11) not null,
+	phoneno varchar(11) not null,
     	address1 varchar(200) not null,
     	address2 varchar(100) not null,
     	city varchar(50) not null,
