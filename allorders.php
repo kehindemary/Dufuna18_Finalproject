@@ -61,7 +61,7 @@
       <td><?php echo $row['email']?></td>
       <td><?php echo $row['menu']?></td>
       <td><?php echo $row['quantity']?></td>
-<td><button class="btn"><a href = "<?php echo'orderdetail.php?id=' . $row['order_id']?>" class = "nav-link">View Details</a></button>
+<td><button class="btn"><a href = "<?php echo'allorders.php?id=' . $row['order_id']?>" class = "nav-link">View Details</a></button>
 </td>
 <td><button class="btn"><a href = "<?php echo'resolveorder.php?id=' . $row['order_id']?>" class = "nav-link">Mark as Resolved</a></button>
 </td>
