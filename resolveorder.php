@@ -13,17 +13,11 @@
     <script src="jquery/jquery.min.js"></script>
     <script src="popper/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <style>
-        table td{
-        padding-right:20%;
-        text-align:justify;
-        width:50%;
-        }
-    </style>
+   
 </head>
 <body>
         <div class="container">
-        <h2 class="text-center">View Order</h2>
+        <h2 class="text-center">Order Status</h2>
         <nav class="navbar navbar-expand-md navbar-light fixed-top">
                 <img src="images/imgslides/logo.jpg" class="rounded-circle circle" width="150px" height="100px">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="order.htmlnavbarResponsive">
@@ -45,58 +39,22 @@
                     </nav>
       <?php
         include ('connection.php');
-        $sql = "SELECT * FROM orders WHERE order_id ='".$_GET['id']."'";
+        $newsql = "UPDATE orders SET order_status='1' WHERE order_id ='".$_GET['id']."'";
+        $result = mysqli_query($conn, $newsql)or die(mysqli_error($conn));        
+
+    $sql = "SELECT order_status FROM orders WHERE order_id ='".$_GET['id']."'";
         $row = mysqli_query($conn, $sql)->fetch_assoc();
-    ?>
-        <table>
-           
-           <tr><td>Firstname: </td>
-           <td>  
-            <?php echo $row['firstname']?>
-            </td></tr>
-           <tr><td>Lastname: </td>
-           <td>   
-            <?php echo $row['lastname']?>
-            </td></tr>
-           <tr><td>Email: </td>
-           <td>      
-            <?php echo $row['email']?>
-            </td></tr>
-           <tr><td>Gender: </td>
-           <td>       
-            <?php echo $row['gender']?>
-            </td></tr>
-           <tr><td>Phone no: </td>
-           <td>    
-            <?php echo $row['phoneno']?>
-            </td></tr>
-           <tr><td>Address: </td>
-           <td>   
-            <?php echo $row['address1']?>
-            </td></tr>
-           <tr><td>Nearest Busstop: </td>
-           <td>      
-            <?php echo $row['address2']?>
-            </td></tr>
-           <tr><td>City: </td>
-           <td>       
-            <?php echo $row['city']?>
-            </td></tr>
-           <tr><td>State: </td>
-           <td>      
-            <?php echo $row['state1']?>
-            </td></tr>
-           <tr><td>Menu: </td>
-           <td>       
-            <?php echo $row['menu']?>
-            </td></tr>
-           <tr><td>Quantity: </td>
-           <td>    
-            <?php echo $row['quantity']?>
-            </td></tr>
-           <p>Order Status:
+
+
+
+
+
+        ?>
+       
+        
+           <h3 class = "text-center">Order Status:
                 <?php
-                if($row['order_status'] == 0){
+               if($row['order_status'] == 0){
                 echo "Pending";
                 }
                 else{
@@ -104,14 +62,10 @@
                 }
                 $row['order_status']
                 ?>
-            </p>
-           <tr><td>Order Date: </td>
-           <td>      
-            <?php echo $row['order_date']?>
-            </td></tr>
-            <br>
-        </table>
-            <button class="btn"><a href="allorders.php" class="nav-link">Back</a></button>
+                
+            </h3>
+           
+            <a href="allorders.php" class="nav-link text-center">Back</a>
         </div>
         <footer class="container-fluid" id="footer">
         <div class="row">

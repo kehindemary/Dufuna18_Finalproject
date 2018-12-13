@@ -40,33 +40,33 @@
       include ('connection.php');
       $sql = "SELECT * FROM orders";
       $run = mysqli_query($conn, $sql);
-      while($_SESSION = mysqli_fetch_assoc($run)){
+      while($row = mysqli_fetch_assoc($run)){
         ?>
       <tr>
-      <th scope="row"><?php echo $_SESSION['order_id']?></th>
-      <td><?php echo $_SESSION['firstname']?></td>
-      <td><?php echo $_SESSION['lastname']?></td>
-      <td><?php echo $_SESSION['email']?></td>
-      <td><?php echo $_SESSION['gender']?></td>
-      <td><?php echo $_SESSION['phoneno']?></td>
-      <td><?php echo $_SESSION['address1']?></td>
-      <td><?php echo $_SESSION['address2']?></td>
-      <td><?php echo $_SESSION['city']?></td>
-      <td><?php echo $_SESSION['state1']?></td>
-      <td><?php echo $_SESSION['menu']?></td>
-      <td><?php echo $_SESSION['quantity']?></td>
+      <th scope="row"><?php echo $row['order_id']?></th>
+      <td><?php echo $row['firstname']?></td>
+      <td><?php echo $row['lastname']?></td>
+      <td><?php echo $row['email']?></td>
+      <td><?php echo $row['gender']?></td>
+      <td><?php echo $row['phoneno']?></td>
+      <td><?php echo $row['address1']?></td>
+      <td><?php echo $row['address2']?></td>
+      <td><?php echo $row['city']?></td>
+      <td><?php echo $row['state1']?></td>
+      <td><?php echo $row['menu']?></td>
+      <td><?php echo $row['quantity']?></td>
       <td>
         <?php 
-      if($order_status == 0){
-        echo "Pending";
+      if($row['order_status'] == 0){
+      echo "Pending";
       }
       else{
       echo "Resolved";
       }
-      $_SESSION['order_status']
+      $row['order_status']
       ?>
       </td>
-      <td><?php echo $_SESSION['order_date']?></td>
+      <td><?php echo $row['order_date']?></td>
     </tr>
     <?php } ?>
   </tbody>

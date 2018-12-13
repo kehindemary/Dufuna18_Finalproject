@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
         $state1 = mysqli_escape_string($conn, $_POST['state1']);
         $menu = mysqli_escape_string($conn, $_POST['menu']);
         $quantity = mysqli_escape_string($conn, $_POST['quantity']);
-        $order_status = $_POST['order_status'];
+        $order_status = '0';
         if(empty($firstname) || empty($lastname) || empty($email) || empty($gender) || empty($phoneno) ||
         empty($address1) || empty($address2) || empty($city) || empty($state1) || empty($menu) || empty($quantity)){
             die ("All fields are Required");
