@@ -44,14 +44,7 @@
 
     $sql = "SELECT order_status FROM orders WHERE order_id ='".$_GET['id']."'";
         $row = mysqli_query($conn, $sql)->fetch_assoc();
-
-
-
-
-
         ?>
-       
-        
            <h3 class = "text-center">Order Status:
                 <?php
                if($row['order_status'] == 0){
